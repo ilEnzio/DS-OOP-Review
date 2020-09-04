@@ -1,6 +1,9 @@
 '''Game class to model a football game
 '''
-from teams import team_names
+# from teams import team_names
+# from football.possible_values import *
+from football import possible_values
+
 import random
 
 
@@ -62,7 +65,17 @@ class Game:
         else:
             self.score[team] += 3
 
-    def safety(self, TODO):
+    def safety(self, team):
+        '''record safety for a team
+        Parameters
+        -----------------------------
+        team : str
+            team that scored
+        '''
+        if team not in self.teams:
+            raise ValueError('team parameter must be in self.teams')
+        else:
+            self.score[team] += 2
         pass  # TODO (a safety is worth 2 points)
 
     def get_winning_team(self):

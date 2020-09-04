@@ -1,6 +1,10 @@
 import unittest
-from players import Player, Quarterback
-from possible_values import *
+# from players import Player, Quarterback
+
+from football.players import Player, Quarterback
+
+
+from football import possible_values
 from game import Game
 # TODO - some things you can add...
 
@@ -12,6 +16,7 @@ from game import Game
 
 class FootballGameTest(unittest.TestCase):
     '''test the class'''
+
     def test_field_goal_made(self):
         pass  # TODO
 
@@ -24,6 +29,7 @@ class FootballPlayerTest(unittest.TestCase):
     yards=120, touchdowns=5, safety=1,
                  interceptions=0
     '''
+
     def test_default_player_yards(self):
         player = Player(name='Dude')
         self.assertEqual(player.yards, 120)

@@ -7,14 +7,21 @@ class Player:
     THIS IS NOT A VERY GENERALIZABLE MODEL IF YOU KNOW THINGS ABOUT FOOTBALL
     and that's okay
     '''
+
     def __init__(self, name=None, yards=120, touchdowns=5, safety=1,
-                 interceptions=0, field_goals=3):
+                 interceptions=0, field_goals=3, stats=None):
         self.name = name
         self.yards = yards
         self.touchdowns = touchdowns
         self.safety = safety
         self.interceptions = interceptions
         self.field_goals = field_goals
+
+        # looks like stat should be a dictionary:
+        # td - number of td's, saftey - number of safeties
+        # stats_dict = {"td": touchdowns, "safety": safety}
+
+        self.stats = {"td": touchdowns, "safety": safety}
 
     def get_points(self):
         '''Gets points scored by the player from stats
@@ -29,6 +36,7 @@ class Quarterback(Player):
     '''Override certain parameters of the default Player class and add some
     functionality unique to quarterbacks
     '''
+
     def __init__(self, name=None, yards=130, touchdowns=5, completed_passes=20,
                  interceptions=4, safety=None, field_goals=None):
         super().__init__(name=name, yards=yards, touchdowns=touchdowns,
